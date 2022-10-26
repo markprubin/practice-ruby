@@ -7,6 +7,8 @@
 # puts "Pablo's food store has #{storeitem1[:color]} #{storeitem1[:item]} in stock, currently priced at #{storeitem1[:price]} dollars, with a shelf life of #{storeitem1[:shelf_life]}."
 
 class Storeitem
+  attr_reader :item, :color, :price, :shelf_life
+
   def initialize(item, color, price, shelf_life, in_stock)
     @item = item
     @color = color
@@ -19,25 +21,25 @@ class Storeitem
     puts "Pablo's food store has #{color} #{item} currently priced at #{price} dollars, with a shelf life of #{shelf_life}."
   end
 
-  def item
-    @item
-  end
+  # def item
+  #   @item
+  # end
 
-  def color
-    @color
-  end
+  # def color
+  #   @color
+  # end
 
-  def price
-    @price
-  end
+  # def price
+  #   @price
+  # end
 
-  def shelf_life
-    @shelf_life
-  end
+  # def shelf_life
+  #   @shelf_life
+  # end
 
-  def in_stock
-    @in_stock
-  end
+  # def in_stock
+  #   @in_stock
+  # end
 
   def in_stock=(in_stock)
     @in_stock = in_stock
