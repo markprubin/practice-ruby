@@ -10,12 +10,12 @@ class Storeitem
   attr_reader :item, :color, :price, :shelf_life, :in_stock
   attr_writer :in_stock
 
-  def initialize(item, color, price, shelf_life, in_stock)
-    @item = item
-    @color = color
-    @price = price
-    @shelf_life = shelf_life
-    @in_stock = in_stock
+  def initialize(input_options)
+    @item = input_options[:item]
+    @color = input_options[:color]
+    @price = input_options[:price]
+    @shelf_life = input_options[:shelf_life]
+    @in_stock = input_options[:in_stock]
   end
 
   def print
@@ -27,9 +27,9 @@ class Storeitem
   end
 end
 
-storeitem1 = Storeitem.new("salsa", "red", 5, "2 months", true)
-storeitem2 = Storeitem.new("cheddar cheese", "yellow", 4, "2 weeks", true)
-storeitem3 = Storeitem.new("corn tortillas", "yellow", 3, "1 week", true)
+storeitem1 = Storeitem.new({ item: "salsa", color: "red", price: 5, shelf_life: "2 months", in_stock: true })
+storeitem2 = Storeitem.new({ item: "cheddar cheese", color: "yellow", price: 4, shelf_life: "2 weeks", in_stock: true })
+storeitem3 = Storeitem.new({ item: "corn tortillas", color: "yellow", price: 3, shelf_life: "1 week", in_stock: true })
 
 p storeitem1.print
 storeitem1.add_tax
