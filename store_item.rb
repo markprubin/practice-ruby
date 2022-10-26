@@ -7,7 +7,8 @@
 # puts "Pablo's food store has #{storeitem1[:color]} #{storeitem1[:item]} in stock, currently priced at #{storeitem1[:price]} dollars, with a shelf life of #{storeitem1[:shelf_life]}."
 
 class Storeitem
-  attr_reader :item, :color, :price, :shelf_life
+  attr_reader :item, :color, :price, :shelf_life, :in_stock
+  attr_writer :in_stock
 
   def initialize(item, color, price, shelf_life, in_stock)
     @item = item
@@ -19,30 +20,6 @@ class Storeitem
 
   def print
     puts "Pablo's food store has #{color} #{item} currently priced at #{price} dollars, with a shelf life of #{shelf_life}."
-  end
-
-  # def item
-  #   @item
-  # end
-
-  # def color
-  #   @color
-  # end
-
-  # def price
-  #   @price
-  # end
-
-  # def shelf_life
-  #   @shelf_life
-  # end
-
-  # def in_stock
-  #   @in_stock
-  # end
-
-  def in_stock=(in_stock)
-    @in_stock = in_stock
   end
 
   def add_tax
@@ -57,5 +34,6 @@ storeitem3 = Storeitem.new("corn tortillas", "yellow", 3, "1 week", true)
 p storeitem1.print
 storeitem1.add_tax
 p storeitem1.print
+p storeitem1.in_stock
 storeitem1.in_stock = false
-p storeitem1.print
+p storeitem1.in_stock
