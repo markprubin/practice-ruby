@@ -6,17 +6,18 @@
 
 # puts "Pablo's food store has #{storeitem1[:color]} #{storeitem1[:item]} in stock, currently priced at #{storeitem1[:price]} dollars, with a shelf life of #{storeitem1[:shelf_life]}."
 
-
 class Storeitem
-  def initialize (item, color, price, shelf_life)
+  def initialize(item, color, price, shelf_life, in_stock)
     @item = item
     @color = color
     @price = price
-    @shelf_life = shefl_life
+    @shelf_life = shelf_life
+    @in_stock = in_stock
   end
-  
-  def print_info
-    puts "Pablo's food store has #{color} #{item} in stock, currently priced at #{price} dollars, with a shelf life of #{shelf_life}."
+
+  def print
+    puts "Pablo's food store has #{color} #{item} currently priced at #{price} dollars, with a shelf life of #{shelf_life}."
+  end
 
   def item
     @item
@@ -34,10 +35,25 @@ class Storeitem
     @shelf_life
   end
 
+  def in_stock
+    @in_stock
+  end
+
+  def in_stock=(in_stock)
+    @in_stock = in_stock
+  end
+
   def add_tax
     @price = 1.08 * price
+  end
 end
 
-storeitem1 = Storeitem.new("Salsa", "red", 5, "2 months")
-storeitem2 = Storeitem.new("Cheddar Cheese", "yellow", 4, "2 weeks")
-storeitem3 = Storeitem.new("Corn Tortillas", "yellow", 3, "1 week")
+storeitem1 = Storeitem.new("salsa", "red", 5, "2 months", true)
+storeitem2 = Storeitem.new("cheddar cheese", "yellow", 4, "2 weeks", true)
+storeitem3 = Storeitem.new("corn tortillas", "yellow", 3, "1 week", true)
+
+p storeitem1.print
+storeitem1.add_tax
+p storeitem1.print
+storeitem1.in_stock = false
+p storeitem1.print
