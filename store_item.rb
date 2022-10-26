@@ -19,11 +19,19 @@ class Storeitem
   end
 
   def print
-    puts "Pablo's food store has #{color} #{item} currently priced at #{price} dollars, with a shelf life of #{shelf_life}."
+    puts "Pablo's food store has #{color} #{item} currently priced at #{price} dollars, with a shelf life of #{shelf_life}. It is currently #{stock_status}."
   end
 
   def add_tax
     @price = 1.08 * price
+  end
+
+  def stock_status
+    if @in_stock == true
+      puts "in stock"
+    else
+      puts "out of stock"
+    end
   end
 end
 
@@ -34,6 +42,3 @@ storeitem3 = Storeitem.new({ item: "corn tortillas", color: "yellow", price: 3, 
 p storeitem1.print
 storeitem1.add_tax
 p storeitem1.print
-p storeitem1.in_stock
-storeitem1.in_stock = false
-p storeitem1.in_stock
