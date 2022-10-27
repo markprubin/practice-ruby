@@ -34,9 +34,9 @@ class Storeitem
   end
 end
 
-storeitem1 = Storeitem.new({ item: "salsa", color: "red", price: 5, shelf_life: "2 months", in_stock: true })
-storeitem2 = Storeitem.new({ item: "cheddar cheese", color: "yellow", price: 4, shelf_life: "2 weeks", in_stock: true })
-storeitem3 = Storeitem.new({ item: "corn tortillas", color: "yellow", price: 3, shelf_life: "1 week", in_stock: true })
+storeitem1 = Storeitem.new({ item: "salsa", color: "red", price: 5, in_stock: true })
+storeitem2 = Storeitem.new({ item: "cheddar cheese", color: "yellow", price: 4, in_stock: true })
+storeitem3 = Storeitem.new({ item: "corn tortillas", color: "yellow", price: 3, in_stock: true })
 
 p storeitem1.print
 
@@ -48,3 +48,7 @@ class Shelf_life < Storeitem
     @shelf_life = input_options[:shelf_life]
   end
 end
+
+shelf_life1 = Shelf_life.new(item: "salsa", color: "red", price: 5, in_stock: true, shelf_life: 3)
+
+p shelf_life1
