@@ -52,25 +52,15 @@ end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
 
-class Terminalizer < Employee
-  def create
-    puts "First Name:"
-    first_name = gets.chomp
-    puts "Last Name:"
-    last_name = gets.chomp
-    puts "Salary:"
-    salary = gets.chomp
-
-    #Automatically set them to true
-
-  end
-
-  def read
-  end
-
-  def update
-  end
-
-  def delete
+class Intern < Employee
+  def send_report
+    puts "Sending email..."
+    # use email sending library...
+    puts "Email sent!"
   end
 end
+
+intern = Intern.new(first_name: "Adrienne", last_name: "Lowe", salary: 50000, active: true)
+
+intern.print_info
+intern.send_report
